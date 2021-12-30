@@ -1,4 +1,5 @@
 <?php
+require __DIR__.'/../vendor/autoload.php';
 
 define('CERT_SSL_KEY', './zoopla/test/mycert.crt');
 
