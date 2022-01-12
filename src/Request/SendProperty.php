@@ -60,7 +60,7 @@ class SendProperty extends RequestBase
 		'total_bedrooms' => array('type' => 'integer', ),
 
 
-		'property_type' => array('type' => 'enum', 'class' => PropertyType::class, ),
+		'property_type' => array('type' => 'string', ),
 		'listed_building_grade' => array('type' => 'enum', 'class' => ListedBuildingGrade::class, ),
 		'tenure' => array('type' => 'enum', 'class' => Tenure::class, ),
 		'central_heating' => array('type' => 'enum', 'class' => CentralHeating::class, ),
