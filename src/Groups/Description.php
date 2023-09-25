@@ -4,7 +4,7 @@ namespace mehmetbulut\Zoopla\Groups;
 
 use mehmetbulut\Zoopla\SynthesizeTrait;
 
-class Description
+class Description implements \JsonSerializable
 {
 	use SynthesizeTrait;
 

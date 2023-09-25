@@ -5,7 +5,7 @@ namespace mehmetbulut\Zoopla\Groups;
 use mehmetbulut\Zoopla\SynthesizeTrait;
 use mehmetbulut\Zoopla\Values\DimensionUnit;
 
-class Dimensions
+class Dimensions implements \JsonSerializable
 {
 	use SynthesizeTrait;
 

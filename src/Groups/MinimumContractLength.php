@@ -5,7 +5,7 @@ namespace mehmetbulut\Zoopla\Groups;
 use mehmetbulut\Zoopla\SynthesizeTrait;
 use mehmetbulut\Zoopla\Values\RentalTermUnit;
 
-class MinimumContractLength
+class MinimumContractLength implements \JsonSerializable
 {
 	use SynthesizeTrait;
 

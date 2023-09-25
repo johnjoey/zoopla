@@ -6,7 +6,7 @@ use mehmetbulut\Zoopla\SynthesizeTrait;
 use mehmetbulut\Zoopla\Values\AreaUnit;
 use mehmetbulut\Zoopla\Values\Frequency;
 
-class ServiceCharge
+class ServiceCharge implements \JsonSerializable
 {
 	use SynthesizeTrait;
 

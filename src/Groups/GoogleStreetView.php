@@ -4,7 +4,7 @@ namespace mehmetbulut\Zoopla\Groups;
 
 use mehmetbulut\Zoopla\SynthesizeTrait;
 
-class GoogleStreetView
+class GoogleStreetView implements \JsonSerializable
 {
 	use SynthesizeTrait;
 

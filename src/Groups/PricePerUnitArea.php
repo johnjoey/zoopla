@@ -7,7 +7,7 @@ namespace mehmetbulut\Zoopla\Groups;
 use mehmetbulut\Zoopla\SynthesizeTrait;
 use mehmetbulut\Zoopla\Values\AreaUnit;
 
-class PricePerUnitArea
+class PricePerUnitArea implements \JsonSerializable
 {
 	use SynthesizeTrait;
 

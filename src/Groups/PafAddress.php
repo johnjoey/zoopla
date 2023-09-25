@@ -7,7 +7,7 @@ namespace mehmetbulut\Zoopla\Groups;
 use mehmetbulut\Zoopla\SynthesizeTrait;
 use mehmetbulut\Zoopla\Values\PostCodeType;
 
-class PafAddress
+class PafAddress implements \JsonSerializable
 {
 	use SynthesizeTrait;
 
