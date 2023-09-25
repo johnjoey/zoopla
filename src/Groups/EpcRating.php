@@ -4,7 +4,7 @@ namespace mehmetbulut\Zoopla\Groups;
 
 use mehmetbulut\Zoopla\SynthesizeTrait;
 
-class EpcRating
+class EpcRating implements \JsonSerializable
 {
 	use SynthesizeTrait;
 

@@ -44,18 +44,6 @@ class RequestBase implements \JsonSerializable
 		return json_decode($this->getJson(), false);
 	}
 
-	public function jsonSerialize()
-	{
-		$data = [];
-		foreach ($this->arrSynthesize as $key => $value) {
-			if (isset($this->{$key}) && !empty($this->{$key})) {
-				$data[$key] = $this->{$key};
-			}
-		}
-
-		return $data;
-	}
-
 	public function getUrl($environment)
 	{
 		if ($environment == ZooplaRealTime::TEST) {

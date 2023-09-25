@@ -5,7 +5,7 @@ namespace mehmetbulut\Zoopla\Groups;
 use mehmetbulut\Zoopla\SynthesizeTrait;
 use mehmetbulut\Zoopla\Values\ContentType;
 
-class Content
+class Content implements \JsonSerializable
 {
 	use SynthesizeTrait;
 

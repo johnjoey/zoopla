@@ -7,3 +7,4 @@ composer.phar
 /phpunit.xml
 /phpunit.phar
 /zoopla
+.phpunit.cache

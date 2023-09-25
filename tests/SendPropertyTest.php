@@ -123,7 +123,6 @@ class SendPropertyTest extends TestCase
 		//location
 		$request->location->property_number_or_name = 'ds';
 		$request->location->street_name = 'ds';
-		$request->location->street_name = 'ds';
 		$request->location->locality = 'ds';
 		$request->location->town_or_city = 'ds';
 		$request->location->county = 'London';

@@ -6,6 +6,8 @@ use DateTime;
 
 trait SynthesizeTrait
 {
+	protected $_data = [];
+
 	public function __set($property, $value)
 	{
 		if ($this->hasProperty($property)) {
@@ -15,29 +17,28 @@ trait SynthesizeTrait
 		}
 	}
 
+	public function __isset($property)
+	{
+		return isset($this->_data[$property]);
+	}
+
 	public function __get($property)
 	{
-		if (property_exists($this, $property)) {
-			return $this->{$property};
-		} else if ($this->hasProperty($property)) {
-			if (is_array($property)) {
-				return $this->{$property};
-			} else {
-				$class = $this->arrSynthesize[$property]['class'];
-				return $this->{$property} = new $class();
-			}
+		if (isset($this->_data[$property])) {
+			return $this->_data[$property];
 		}
 
-		throw new \Exception('Invalid param', Response::HTTP_BAD_REQUEST);
+		if (!$this->hasProperty($property)) {
+			throw new \Exception('Invalid param', Response::HTTP_BAD_REQUEST);
+		}
+
+		$class = $this->arrSynthesize[$property]['class'];
+		return $this->_data[$property] = new $class();
 	}
 
 	private function hasProperty($property): bool
 	{
-		if (isset($this->arrSynthesize[$property])) {
-			return true;
-		} else {
-			return false;
-		}
+		return isset($this->arrSynthesize[$property]);
 	}
 
 	private function setProperty($property, $value)
@@ -82,7 +83,7 @@ trait SynthesizeTrait
 				if ($value) {
 					if (is_string($value)) {
 						$check = true;
-					} else if (is_object($value) && $value instanceof $param['class']) {
+					} else if ($value instanceof $param['class']) {
 						$check = true;
 					}
 				}
@@ -107,20 +108,29 @@ trait SynthesizeTrait
 			case 'date'://Y-m-d
 				$format = 'Y-m-d';
 				$d = DateTime::createFromFormat($format, $value);
-				$check = $d && $d->format($format) == $value;
+				$check = $d && $d->format($format) === $value;
 				break;
 
 			case 'datetime'://Y-m-d H:i:s
 				$format = 'Y-m-d H:i:s';
 				$d = DateTime::createFromFormat($format, $value);
-				$check = $d && $d->format($format) == $value;
+				$check = $d && $d->format($format) === $value;
 				break;
 		}
 
 		if (!$check) {
 			throw new \Exception('Invalid type '.$property.' '.$param['type'], Response::HTTP_BAD_REQUEST);
-		} else if ($value) {
-			$this->{$property} = $value;
 		}
+
+		if (!$value) {
+			return;
+		}
+
+		$this->_data[$property] = $value;
+	}
+
+	public function jsonSerialize():array
+	{
+		return $this->_data;
 	}
 }

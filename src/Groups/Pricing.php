@@ -8,7 +8,7 @@ use mehmetbulut\Zoopla\Values\PriceQualifier;
 use mehmetbulut\Zoopla\Values\PricingRentFrequency;
 use mehmetbulut\Zoopla\Values\TransactionType;
 
-class Pricing
+class Pricing implements \JsonSerializable
 {
 	use SynthesizeTrait;
 

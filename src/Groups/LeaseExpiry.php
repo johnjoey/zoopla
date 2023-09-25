@@ -4,7 +4,7 @@ namespace mehmetbulut\Zoopla\Groups;
 
 use mehmetbulut\Zoopla\SynthesizeTrait;
 
-class LeaseExpiry
+class LeaseExpiry implements \JsonSerializable
 {
 	use SynthesizeTrait;
 

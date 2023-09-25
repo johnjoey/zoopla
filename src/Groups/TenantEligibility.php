@@ -6,7 +6,7 @@ use mehmetbulut\Zoopla\SynthesizeTrait;
 use mehmetbulut\Zoopla\Values\TenantEligibilityDss;
 use mehmetbulut\Zoopla\Values\TenantEligibilityStudent;
 
-class TenantEligibility
+class TenantEligibility implements \JsonSerializable
 {
 	use SynthesizeTrait;
 
