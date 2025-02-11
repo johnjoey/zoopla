@@ -14,7 +14,7 @@ class Description implements \JsonSerializable
 		'dimensions' => array('type' => 'objectString', 'class' => Dimensions::class, 'required' => false)
 	);
 
-	public function __construct(string $heading, string $text, string $dimension_str = null, $length = null, $width = null, $units = null)
+	public function __construct(string $heading, string $text, ?string $dimension_str = null, $length = null, $width = null, $units = null)
 	{
 		$this->heading = $heading;
 		$this->text = $text;

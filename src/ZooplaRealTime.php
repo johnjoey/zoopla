@@ -48,7 +48,7 @@ class ZooplaRealTime
 		}
 	}
 
-	public function send($obj_request, bool $zpg_listing_e_tag = false, string $str_url_override = null, bool $bool_debug = false)
+	public function send($obj_request, bool $zpg_listing_e_tag = false, ?string $str_url_override = null, bool $bool_debug = false)
 	{
 		$obj_request->validate($obj_request);
 
