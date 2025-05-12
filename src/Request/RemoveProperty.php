@@ -8,7 +8,7 @@ class RemoveProperty extends RequestBase {
 
 	protected $path = '/listing/delete';
 
-	protected $schema = 'https://realtime-listings.webservices.zpg.co.uk/docs/v1.2/schemas/listing/delete.json';
+	protected $schema = 'https://realtime-listings.webservices.zpg.co.uk/docs/v2.3/schemas/listing/delete.json';
 
 	protected $schemaJsonFileName = 'remove-property.json';
 

@@ -3,7 +3,7 @@
    "title" : "listing/list",
    "type" : "object",
    "additionalProperties" : false,
-   "id" : "http://realtime-listings.webservices.zpg.co.uk/docs/v1.2/schemas/listing/list.json",
+   "id" : "http://realtime-listings.webservices.zpg.co.uk/docs/v2.3/schemas/listing/list.json",
    "properties" : {
       "branch_reference" : {
          "type" : "string",

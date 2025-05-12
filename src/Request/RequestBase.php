@@ -13,8 +13,8 @@ class RequestBase implements \JsonSerializable
 {
 	use SynthesizeTrait;
 
-	private $liveUrl = 'https://realtime-listings-api.webservices.zpg.co.uk/live/v1';
-	private $testUrl = 'https://realtime-listings-api.webservices.zpg.co.uk/sandbox/v1';
+	private $liveUrl = 'https://realtime-listings-api.webservices.zpg.co.uk/live/v2';
+	private $testUrl = 'https://realtime-listings-api.webservices.zpg.co.uk/sandbox/v2';
 
 	/*protected function removeEmptyValues($property)
 	{

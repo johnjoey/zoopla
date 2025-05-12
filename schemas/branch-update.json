@@ -3,7 +3,7 @@
    "title" : "branch/update",
    "type" : "object",
    "additionalProperties" : false,
-   "id" : "http://realtime-listings.webservices.zpg.co.uk/docs/v1.2/schemas/branch/update.json",
+   "id" : "http://realtime-listings.webservices.zpg.co.uk/docs/v2.3/schemas/branch/update.json",
    "definitions" : {
       "coordinates" : {
          "type" : "object",

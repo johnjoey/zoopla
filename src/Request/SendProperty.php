@@ -32,7 +32,7 @@ class SendProperty extends RequestBase
 {
 	protected $path = '/listing/update';
 
-	protected $schema = 'https://realtime-listings.webservices.zpg.co.uk/docs/v1.2/schemas/listing/update.json';
+	protected $schema = 'https://realtime-listings.webservices.zpg.co.uk/docs/v2.3/schemas/listing/update.json';
 
 	protected $schemaJsonFileName = 'send-property.json';
 

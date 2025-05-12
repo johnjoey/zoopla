@@ -8,7 +8,7 @@ class BranchUpdate extends RequestBase
 {
 	protected $path = '/branch/update';
 
-	protected $schema = 'https://realtime-listings.webservices.zpg.co.uk/docs/v1.2/schemas/branch/update.json';
+	protected $schema = 'https://realtime-listings.webservices.zpg.co.uk/docs/v2.3/schemas/branch/update.json';
 
 	protected $schemaJsonFileName = 'branch-update.json';
 

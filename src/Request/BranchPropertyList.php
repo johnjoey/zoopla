@@ -6,7 +6,7 @@ class BranchPropertyList extends RequestBase {
 
 	protected $path = '/listing/list';
 
-	protected $schema = 'http://realtime-listings.webservices.zpg.co.uk/docs/v1.2/schemas/listing/list.json';
+	protected $schema = 'http://realtime-listings.webservices.zpg.co.uk/docs/v2.3/schemas/listing/list.json';
 
 	protected $schemaJsonFileName = 'branch-property-listing.json';
 
