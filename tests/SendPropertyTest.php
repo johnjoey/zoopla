@@ -5,6 +5,7 @@ namespace mehmetbulut\Zoopla\Tests;
 use mehmetbulut\Zoopla\Exception\ZooplaValidationException;
 use mehmetbulut\Zoopla\Groups\Content;
 use mehmetbulut\Zoopla\Groups\Description;
+use mehmetbulut\Zoopla\Groups\GroundRent;
 use mehmetbulut\Zoopla\Request\SendProperty;
 use mehmetbulut\Zoopla\Values\Accessibility;
 use mehmetbulut\Zoopla\Values\AreaUnit;
@@ -69,7 +70,7 @@ class SendPropertyTest extends TestCase
 		//number
 		$request->annual_business_rates = 432;
 		$request->deposit = 432;
-		$request->ground_rent = 432;
+		$request->ground_rent = new GroundRent(432);
 
 		//date
 		$request->available_from_date = date('Y-m-d');

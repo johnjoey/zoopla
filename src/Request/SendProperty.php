@@ -6,6 +6,7 @@ use mehmetbulut\Zoopla\Groups\Areas;
 use mehmetbulut\Zoopla\Groups\Content;
 use mehmetbulut\Zoopla\Groups\EpcRating;
 use mehmetbulut\Zoopla\Groups\GoogleStreetView;
+use mehmetbulut\Zoopla\Groups\GroundRent;
 use mehmetbulut\Zoopla\Groups\LeaseExpiry;
 use mehmetbulut\Zoopla\Groups\Location;
 use mehmetbulut\Zoopla\Groups\MinimumContractLength;
@@ -77,7 +78,7 @@ class SendProperty extends RequestBase
 
 		'annual_business_rates' => array('type' => 'number', ),
 		'deposit' => array('type' => 'number', ),
-		'ground_rent' => array('type' => 'number', ),
+		'ground_rent' => array('type' => 'object', 'class' => GroundRent::class),
 
 		'available_from_date' => array('type' => 'date', ),
 		'open_day' => array('type' => 'date', ),
