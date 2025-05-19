@@ -2,9 +2,11 @@
 
 namespace mehmetbulut\Zoopla\Tests;
 
+use mehmetbulut\Zoopla\Exception\ZooplaValidationException;
 use mehmetbulut\Zoopla\Groups\Content;
 use mehmetbulut\Zoopla\Groups\Description;
 use mehmetbulut\Zoopla\Request\SendProperty;
+use mehmetbulut\Zoopla\Values\Accessibility;
 use mehmetbulut\Zoopla\Values\AreaUnit;
 use mehmetbulut\Zoopla\Values\BillsIncluded;
 use mehmetbulut\Zoopla\Values\BuyerIncentives;
@@ -88,7 +90,7 @@ class SendPropertyTest extends TestCase
 
 		//boolean
 		$request->fishing_rights = false;
-		$request->accessibility = true;
+		$request->accessibility = [Accessibility::WheelchairAccessible, Accessibility::StepFreeAccess, Accessibility::WetRoom, Accessibility::LateralLiving];
 		$request->shared_accommodation = true;
 		$request->basement = true;
 		$request->burglar_alarm = true;
@@ -189,7 +191,12 @@ class SendPropertyTest extends TestCase
 		$this->assertJson($request->getJson());
 		$this->assertNotEmpty($request->getJson());
 
-		$request->validate();
+		try {
+			$request->validate();
+		} catch (ZooplaValidationException $e) {
+			echo '<pre>'; print_r($e->getErrors()); echo '</pre>';
+			$this->fail();
+		}
 
 		//$d = $c->send($request,true,null,false);
 	}

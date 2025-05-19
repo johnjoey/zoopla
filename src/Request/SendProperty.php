@@ -12,6 +12,7 @@ use mehmetbulut\Zoopla\Groups\MinimumContractLength;
 use mehmetbulut\Zoopla\Groups\Pricing;
 use mehmetbulut\Zoopla\Groups\ServiceCharge;
 use mehmetbulut\Zoopla\Groups\TenantEligibility;
+use mehmetbulut\Zoopla\Values\Accessibility;
 use mehmetbulut\Zoopla\Values\BillsIncluded;
 use mehmetbulut\Zoopla\Values\BuyerIncentives;
 use mehmetbulut\Zoopla\Values\Category;
@@ -97,7 +98,7 @@ class SendProperty extends RequestBase
 		'feature_list' => array('type' => 'array', ),
 
 		'fishing_rights' => array('type' => 'boolean', ),
-		'accessibility' => array('type' => 'boolean', ),
+		'accessibility' => array('type' => 'array', 'class' => Accessibility::class, ),
 		'shared_accommodation' => array('type' => 'boolean', ),
 		'basement' => array('type' => 'boolean', ),
 		'burglar_alarm' => array('type' => 'boolean', ),
