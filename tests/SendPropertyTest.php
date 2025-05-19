@@ -90,7 +90,20 @@ class SendPropertyTest extends TestCase
 
 		//boolean
 		$request->fishing_rights = false;
-		$request->accessibility = [Accessibility::WheelchairAccessible, Accessibility::StepFreeAccess, Accessibility::WetRoom, Accessibility::LateralLiving];
+		$request->accessibility = [
+			Accessibility::WheelchairAccessible,
+			Accessibility::StepFreeAccess,
+			Accessibility::WetRoom,
+			Accessibility::LateralLiving,
+			Accessibility::DisabledFeatures,
+			Accessibility::LevelAccess,
+			Accessibility::RampedAccess,
+			Accessibility::LiftAccess,
+			Accessibility::StairLift,
+			Accessibility::WideDorrways,
+			Accessibility::LevelAccessShower,
+			Accessibility::VariableHeightKitchenSurfaces,
+		];
 		$request->shared_accommodation = true;
 		$request->basement = true;
 		$request->burglar_alarm = true;
@@ -195,6 +208,7 @@ class SendPropertyTest extends TestCase
 			$request->validate();
 		} catch (ZooplaValidationException $e) {
 			echo '<pre>'; print_r($e->getErrors()); echo '</pre>';
+
 			$this->fail();
 		}
 
