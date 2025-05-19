@@ -52,7 +52,6 @@ class SendProperty extends RequestBase
 		'service_charge' => array('type' => 'object', 'class' => ServiceCharge::class, ),
 		'epc_ratings' => array('type' => 'object', 'class' => EpcRating::class, ),
 		'google_street_view' => array('type' => 'object', 'class' => GoogleStreetView::class, ),
-		'lease_expiry' => array('type' => 'object', 'class' => LeaseExpiry::class, ),
 
 		'available_bedrooms' => array('type' => 'integer', ),
 		'bathrooms' => array('type' => 'integer', ),
@@ -64,7 +63,7 @@ class SendProperty extends RequestBase
 
 		'property_type' => array('type' => 'string', ),
 		'listed_building_grade' => array('type' => 'enum', 'class' => ListedBuildingGrade::class, ),
-		'tenure' => array('type' => 'enum', 'class' => Tenure::class, ),
+		'tenure' => array('type' => 'object', 'class' => Tenure::class, ),
 		'central_heating' => array('type' => 'enum', 'class' => CentralHeating::class, ),
 		'decorative_condition' => array('type' => 'enum', 'class' => DecorativeCondition::class, ),
 		'category' => array('type' => 'enum', 'class' => Category::class, ),

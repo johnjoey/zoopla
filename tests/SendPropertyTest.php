@@ -65,7 +65,7 @@ class SendPropertyTest extends TestCase
 
 		$request->property_type = PropertyType::BarnConversion; //enum
 		$request->listed_building_grade = ListedBuildingGrade::CategoryA; //enum
-		$request->tenure = Tenure::Leasehold; //enum
+//		$request->tenure = Tenure::Leasehold; //oneOf object
 
 		//number
 		$request->annual_business_rates = 432;
@@ -81,7 +81,7 @@ class SendPropertyTest extends TestCase
 		$request->buyer_incentives = [BuyerIncentives::HelpToNuy, BuyerIncentives::NewBuy];
 		$request->central_heating = CentralHeating::Full;
 		$request->commercial_use_classes = [CommercialUseClass::A1];
-		$request->council_tax_band = CouncilTaxBand::A;
+//		$request->council_tax_band = CouncilTaxBand::A; //TODO: defined inside local_authority
 		$request->decorative_condition = DecorativeCondition::Average;
 		$request->feature_list = ["test", "test2"];
 		//$request->floor_levels = [FloorLevels::Basement,1];
@@ -191,8 +191,9 @@ class SendPropertyTest extends TestCase
 		$request->google_street_view->heading = 2.32321;
 		$request->google_street_view->pitch = 2.32321;
 
+		// TODO: moved inside tenure >> leasehold object
 		//$request->lease_expiry->expiry_date = date('Y-m-d', strtotime('+ 10 day'));
-		$request->lease_expiry->years_remaining = 2000;
+//		$request->lease_expiry->years_remaining = 2000;
 
 		$request->content = [
 			new Content('https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png', ContentType::Image, 'test'),
